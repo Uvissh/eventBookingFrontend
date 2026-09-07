@@ -1,0 +1,57 @@
+.seat {
+    width: 80px;
+    height: 70px;
+    border-radius: 12px;
+    border: 2px solid #22c55e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-family: Arial, sans-serif;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+/* AVAILABLE */
+
+.seat.available {
+    background-color: #ecfdf5;
+    border-color: #22c55e;
+    color: #15803d;
+    cursor: pointer;
+}
+
+.seat.available:hover {
+    background-color: #dcfce7;
+    transform: scale(1.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* BOOKED */
+
+.seat.booked {
+    background-color: #e5e7eb;
+    border-color: #9ca3af;
+    color: #6b7280;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+
+/* SEAT NUMBER */
+
+.seat-number {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* STATUS */
+
+.seat-status {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+}

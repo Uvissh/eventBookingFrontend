@@ -1,0 +1,613 @@
+/* =====================================================
+   CANCEL WRAPPER
+===================================================== */
+
+.seat-cancel-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 20px;
+}
+
+
+/* =====================================================
+   CANCEL CARD
+   RED / ORANGE WARNING THEME
+===================================================== */
+
+.seat-cancel-card {
+    width: 430px;
+
+    padding: 22px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #fee2e2;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 35px rgba(220, 38, 38, 0.08);
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.seat-cancel-icon {
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #fff1f2;
+
+    color: #dc2626;
+
+    font-size: 25px;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.seat-cancel-content {
+    flex: 1;
+}
+
+
+.seat-cancel-label {
+    display: block;
+
+    color: #dc2626;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 3px;
+}
+
+
+.seat-cancel-content h3 {
+    margin: 0;
+
+    color: #271414;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+.seat-cancel-content p {
+    margin: 4px 0 0;
+
+    color: #888;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   CANCEL MAIN BUTTON
+===================================================== */
+
+.seat-cancel-main-button {
+    padding: 11px 15px;
+
+    flex-shrink: 0;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 11px;
+
+    background: #fffafa;
+
+    color: #dc2626;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.seat-cancel-main-button:hover {
+    background: #fee2e2;
+
+    border-color: #fca5a5;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.seat-cancel-modal .modal-content {
+
+    border: none !important;
+
+    border-radius: 25px !important;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 90px rgba(60, 20, 20, 0.25);
+}
+
+
+/* =====================================================
+   MODAL HEADER
+===================================================== */
+
+.seat-cancel-modal-header {
+
+    border-bottom: none !important;
+
+    padding: 25px 28px 5px !important;
+
+    background: #ffffff;
+}
+
+
+.seat-cancel-modal-label {
+
+    display: block;
+
+    color: #dc2626;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 4px;
+}
+
+
+.seat-cancel-modal-header .modal-title {
+
+    color: #261515;
+
+    font-size: 24px;
+
+    font-weight: 750;
+}
+
+
+/* =====================================================
+   MODAL BODY
+===================================================== */
+
+.seat-cancel-modal-body {
+
+    padding: 18px 30px 20px !important;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   WARNING ICON
+===================================================== */
+
+.seat-cancel-modal-icon {
+
+    width: 72px;
+    height: 72px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background: #fff1f2;
+
+    border: 1px solid #ffe4e6;
+
+    color: #dc2626;
+
+    font-size: 35px;
+
+    box-shadow:
+        0 10px 25px rgba(220, 38, 38, 0.10);
+}
+
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+.seat-cancel-modal-body h3 {
+
+    margin: 0;
+
+    color: #261515;
+
+    font-size: 23px;
+
+    font-weight: 750;
+}
+
+
+.seat-cancel-question {
+
+    margin: 6px 0 22px;
+
+    color: #888;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   BOOKING DETAILS
+===================================================== */
+
+.seat-cancel-details {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 15px;
+}
+
+
+.seat-cancel-details div {
+
+    padding: 15px;
+
+    text-align: left;
+
+    border-radius: 15px;
+
+    background: #fffafa;
+
+    border: 1px solid #fee2e2;
+}
+
+
+.seat-cancel-details span {
+
+    display: block;
+
+    color: #a18f8f;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+
+.seat-cancel-details strong {
+
+    color: #392323;
+
+    font-size: 14px;
+
+    word-break: break-all;
+}
+
+
+/* =====================================================
+   WARNING MESSAGE
+===================================================== */
+
+.seat-cancel-warning {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 14px;
+
+    border-radius: 13px;
+
+    background: #fff7ed;
+
+    border: 1px solid #ffedd5;
+
+    text-align: left;
+}
+
+
+.seat-cancel-warning span {
+
+    width: 23px;
+    height: 23px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f97316;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+.seat-cancel-warning p {
+
+    margin: 0;
+
+    color: #9a3412;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   MODAL FOOTER
+===================================================== */
+
+.seat-cancel-modal-footer {
+
+    border-top: none !important;
+
+    padding: 8px 28px 28px !important;
+
+    display: flex;
+
+    gap: 10px;
+}
+
+
+/* =====================================================
+   NO BUTTON
+===================================================== */
+
+.seat-cancel-no-button {
+
+    flex: 1;
+
+    padding: 12px !important;
+
+    border-radius: 13px !important;
+
+    border: 1px solid #e5e7eb !important;
+
+    background: white !important;
+
+    color: #555 !important;
+
+    font-weight: 650 !important;
+}
+
+
+.seat-cancel-no-button:hover {
+
+    background: #f5f5f5 !important;
+}
+
+
+/* =====================================================
+   YES BUTTON
+===================================================== */
+
+.seat-cancel-yes-button {
+
+    flex: 1.5;
+
+    padding: 12px !important;
+
+    border: none !important;
+
+    border-radius: 13px !important;
+
+    background: linear-gradient(
+        135deg,
+        #ef4444,
+        #dc2626
+    ) !important;
+
+    color: white !important;
+
+    font-weight: 700 !important;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+}
+
+
+.seat-cancel-yes-button:hover {
+
+    box-shadow:
+        0 9px 22px rgba(220, 38, 38, 0.25);
+}
+
+
+/* =====================================================
+   SPINNER
+===================================================== */
+
+.seat-cancel-spinner {
+
+    width: 16px;
+    height: 16px;
+
+    border: 2px solid rgba(255,255,255,0.35);
+
+    border-top-color: white;
+
+    border-radius: 50%;
+
+    animation: seatCancelSpin 0.7s linear infinite;
+}
+
+
+@keyframes seatCancelSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   SUCCESS
+===================================================== */
+
+.seat-cancel-success {
+
+    width: 430px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    border: 1px solid #dcfce7;
+
+    box-shadow:
+        0 12px 35px rgba(22, 163, 74, 0.08);
+}
+
+
+.seat-cancel-success-icon {
+
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dcfce7;
+
+    color: #16a34a;
+
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+
+.seat-cancel-success-label {
+
+    color: #16a34a;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.seat-cancel-success h3 {
+
+    margin: 3px 0;
+
+    color: #172016;
+
+    font-size: 17px;
+}
+
+
+.seat-cancel-success p {
+
+    margin: 0;
+
+    color: #777;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .seat-cancel-card,
+    .seat-cancel-success {
+
+        width: 100%;
+
+    }
+
+    .seat-cancel-card {
+
+        flex-wrap: wrap;
+
+    }
+
+    .seat-cancel-main-button {
+
+        width: 100%;
+
+    }
+
+    .seat-cancel-details {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

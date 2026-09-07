@@ -1,0 +1,182 @@
+.concertSection {
+    min-height: 100vh;
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #2e1065 0%,
+            #09090b 45%,
+            #020617 100%
+        );
+
+    color: white;
+}
+
+
+/* Header */
+
+.concertHeader {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.concertHeader h1 {
+    margin: 0;
+
+    font-size: 38px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.concertHeader p {
+    margin-top: 8px;
+
+    color: #a1a1aa;
+    font-size: 16px;
+}
+
+
+/* Main concert box */
+
+.concertGrid {
+    width: 90%;
+    max-width: 850px;
+
+    margin: auto;
+    padding: 35px;
+
+    background: rgba(24, 24, 27, 0.9);
+
+    border: 1px solid #3f3f46;
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.6),
+        inset 0 1px rgba(255, 255, 255, 0.05);
+}
+
+
+/* Stage */
+
+.concertStage {
+    height: 75px;
+
+    margin-bottom: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #581c87,
+        #9333ea,
+        #581c87
+    );
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 0 30px rgba(168, 85, 247, 0.5);
+}
+
+.concertStage span {
+    font-size: 22px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+
+/* Seat container */
+
+.seatContainer {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    max-width: 650px;
+
+    margin: auto;
+}
+
+
+/* Legend */
+
+.seatLegend {
+    margin-top: 35px;
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #d4d4d8;
+
+    font-size: 14px;
+}
+
+.legendSeat {
+    width: 16px;
+    height: 16px;
+
+    border-radius: 5px;
+}
+
+.legendSeat.available {
+    background: #22c55e;
+}
+
+.legendSeat.booked {
+    background: #52525b;
+}
+
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+    .concertSection {
+        padding: 25px 10px;
+    }
+
+    .concertGrid {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .seatContainer {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .concertHeader h1 {
+        font-size: 28px;
+    }
+
+    .concertStage span {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.concertSection {
+    min-height: 100vh;
+    box-sizing: border-box;
+}
