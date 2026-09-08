@@ -1,7 +1,7 @@
 import ConcertSeat from "./Concertseat";
 import Concertbooking from "./ConcertBooking";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../api/axios"
 import "./ConcertGrid.css";
 
 function ConcertGrid() {
@@ -31,11 +31,11 @@ function ConcertGrid() {
     const [selectedSeat, setSelectedSeat] = useState(null);
 
     const getSeatStatus = async () => {
+
         try {
 
-            const response = await axios.get(
-                "http://localhost:3000/api/ConcertSeats/status"
-            );
+            // Use your configured axios instance
+            const response = await api.get("/ConcertSeats/status");
 
             setSeatStatus(response.data.seats);
 
@@ -46,17 +46,8 @@ function ConcertGrid() {
         }
     };
 
-    const handleCloseBooking = () => {
-
-        setSelectedSeat(null);
-
-        getSeatStatus();
-    };
-
     useEffect(() => {
-
         getSeatStatus();
-
     }, []);
 
     const handleSeatClick = (seat) => {
@@ -72,12 +63,17 @@ function ConcertGrid() {
         setSelectedSeat(seat);
     };
 
+    const handleCloseBooking = () => {
+
+        setSelectedSeat(null);
+
+        // Refresh seats after booking
+        getSeatStatus();
+    };
 
     return (
 
         <div className="concertSection">
-
-            {/* Heading */}
 
             <div className="concertHeader">
 
@@ -87,21 +83,11 @@ function ConcertGrid() {
 
             </div>
 
-
-            {/* Main grid */}
-
             <div className="concertGrid">
 
-                {/* Stage */}
-
                 <div className="concertStage">
-
                     <span>🎤 LIVE STAGE</span>
-
                 </div>
-
-
-                {/* Seats */}
 
                 <div className="seatContainer">
 
@@ -126,16 +112,15 @@ function ConcertGrid() {
 
                 </div>
 
-
-                {/* Legend */}
-
                 <div className="seatLegend">
 
                     <div className="legendItem">
 
                         <span className="legendSeat available"></span>
 
-                        <span>Available</span>
+                        <span>
+                            Available
+                        </span>
 
                     </div>
 
@@ -143,16 +128,15 @@ function ConcertGrid() {
 
                         <span className="legendSeat booked"></span>
 
-                        <span>Booked</span>
+                        <span>
+                            Booked
+                        </span>
 
                     </div>
 
                 </div>
 
             </div>
-
-
-            {/* Booking modal */}
 
             {selectedSeat && (
 
@@ -164,7 +148,9 @@ function ConcertGrid() {
                             (s) => s.id === selectedSeat.id
                         )?.status
                     }
+
                     show={true}
+
                     onClose={handleCloseBooking}
                 />
 

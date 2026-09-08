@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-import Seat from "./Seat";
+import api from "../api/axios"
+import Seat from "./seat";
 import Booking from "./Booking";
 import Screen from "./Screen";
 import "./seatGrid.css";
 
 function SeatGrid() {
 
-   
     const seats = [
         { id: 1, row: "A", number: 1 },
         { id: 2, row: "A", number: 2 },
@@ -19,24 +18,16 @@ function SeatGrid() {
         { id: 8, row: "B", number: 4 }
     ];
 
-
-
-
     const [seatStatus, setSeatStatus] = useState([]);
-
-
-
     const [selectedSeat, setSelectedSeat] = useState(null);
-
-
 
     const getSeatStatus = async () => {
 
         try {
 
-            const response = await axios.get(
-                "http://localhost:3000/api/seats/status"
-            );
+            // Use your configured axios instance
+            // The interceptor automatically adds JWT
+            const response = await api.get("/seats/status");
 
             setSeatStatus(response.data.seats);
 
@@ -45,20 +36,11 @@ function SeatGrid() {
             console.log(error);
 
         }
-
     };
 
-
- 
-
     useEffect(() => {
-
         getSeatStatus();
-
     }, []);
-
-
-
 
     const handleSeatClick = (seat) => {
 
@@ -71,12 +53,8 @@ function SeatGrid() {
             return;
         }
 
-        // Store clicked seat
         setSelectedSeat(seat);
-
     };
-
-
 
     const handleCloseBooking = () => {
 
@@ -84,9 +62,7 @@ function SeatGrid() {
 
         // Get latest seat status
         getSeatStatus();
-
     };
-
 
     return (
 
@@ -94,26 +70,15 @@ function SeatGrid() {
 
             <div className="seat-section">
 
-                {/* SCREEN */}
-
                 <Screen />
-
-
-                {/* TITLE */}
 
                 <h2 className="seat-title">
                     Select Your Seat
                 </h2>
 
-
                 <p className="seat-subtitle">
                     Choose an available seat to continue
                 </p>
-
-
-                {/* =================================
-                    SEAT GRID
-                ================================= */}
 
                 <div className="seat-grid">
 
@@ -124,77 +89,51 @@ function SeatGrid() {
                         );
 
                         return (
-
                             <Seat
                                 key={item.id}
                                 seat={item}
                                 status={status?.status}
                                 onSeatClick={handleSeatClick}
                             />
-
                         );
 
                     })}
 
                 </div>
 
-
-            
-
                 <div className="seat-legend">
 
                     <div className="legend-item">
-
                         <span className="legend-box available-box"></span>
-
-                        <span>
-                            Available
-                        </span>
-
+                        <span>Available</span>
                     </div>
 
-
                     <div className="legend-item">
-
                         <span className="legend-box booked-box"></span>
-
-                        <span>
-                            Booked
-                        </span>
-
+                        <span>Booked</span>
                     </div>
 
                 </div>
 
             </div>
 
-
-       
-
             {selectedSeat && (
 
                 <Booking
-
                     seat={selectedSeat}
-
                     status={
                         seatStatus.find(
                             (s) => s.id === selectedSeat.id
                         )?.status
                     }
-
                     show={true}
-
                     onClose={handleCloseBooking}
-
                 />
 
             )}
 
         </div>
-
     );
-
 }
 
 export default SeatGrid;
