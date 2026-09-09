@@ -9,8 +9,18 @@ function Login({ setIsLoggedIn, setUsername }) {
 
     const [email, setEmail] = useState("");
     const [password_hash, setPassword] = useState("");
+    const[message,setMessage]= useState("");
+    const[showMessage,setShowMessage] = useState(false);
 
     const navigate = useNavigate();
+    const showPopup = (text)=>{
+        setMessage(text);
+        setShowMessage(true);
+        setTimeout(()=>{
+            setShowMessage(false);
+
+        },2000);
+    }
 
 
     const handleLogin = async (e) => {
@@ -65,18 +75,19 @@ function Login({ setIsLoggedIn, setUsername }) {
             setIsLoggedIn(true);
 
             setUsername(formattedUsername);
-
-
-            alert("Login successful");
-
-            navigate("/seats");
+            showPopup("Login successful");
+  setTimeout(() => {
+    navigate("/");
+    
+  },1000);
+         
 
 
         } catch (error) {
 
             console.log(error.response?.data);
 
-            alert(
+            showPopup(
                 error.response?.data?.error ||
                 error.response?.data?.message ||
                 "Login failed"
@@ -89,6 +100,11 @@ function Login({ setIsLoggedIn, setUsername }) {
     return (
 
         <div className="login-page">
+            {showMessage && (
+                <div className="popup-messagel">
+                    {message}
+                    </div>
+            )}
 
             {/* Background glow */}
 

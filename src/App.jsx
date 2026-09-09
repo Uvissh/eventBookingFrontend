@@ -3,7 +3,8 @@ import {
   Routes,
   Route,
   Link,
-  useLocation
+  useLocation,
+  useNavigate
 } from "react-router-dom";
 
 import { useState } from "react";
@@ -17,6 +18,8 @@ import ConcertGrid from "./components/ConcertGrid";
 import "./App.css";
 
 
+
+
 function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -26,7 +29,17 @@ function App() {
   const [username, setUsername] = useState(
     localStorage.getItem("username") || ""
   );
+   const[message,setMessage]= useState("");
+  const[showMessage,setShowMessage] = useState(false);
 
+ const showPopup = (text)=>{
+        setMessage(text);
+        setShowMessage(true);
+        setTimeout(()=>{
+            setShowMessage(false);
+
+        },2000);
+    }
 
   const handleLogout = () => {
 
@@ -35,6 +48,8 @@ function App() {
 
     setIsLoggedIn(false);
     setUsername("");
+   
+
   };
 
 
@@ -42,10 +57,21 @@ function App() {
 
     <BrowserRouter>
 
+      {showMessage && (
+
+      <div className="popup-message">
+
+        {message}
+
+      </div>
+
+    )}
+
       <Navbar
         isLoggedIn={isLoggedIn}
         username={username}
         handleLogout={handleLogout}
+        showPopup = {showPopup}
       />
 
 
@@ -100,10 +126,17 @@ function App() {
 function Navbar({
   isLoggedIn,
   username,
-  handleLogout
+  handleLogout,
+  showPopup
 }) {
 
   const location = useLocation();
+  const navigate  = useNavigate();
+   const logout = ()=>{
+    handleLogout();
+    showPopup("logout successful")
+    navigate("/");
+   }
 
 
   return (
@@ -196,9 +229,11 @@ function Navbar({
                   Hi, {username} 👋
                 </span>
 
-                <button
+               <button
                   className="logout-button"
-                  onClick={handleLogout}
+                  onClick={logout}
+                  
+                 
                 >
                   Logout
                 </button>
