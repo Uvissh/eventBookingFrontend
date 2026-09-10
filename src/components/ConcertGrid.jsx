@@ -1,5 +1,5 @@
 import ConcertSeat from "./Concertseat";
-import Concertbooking from "./ConcertBooking";
+import Concertbooking from "./Concertbooking"
 import { useState, useEffect } from "react";
 import api from "../api/axios"
 import "./ConcertGrid.css";
