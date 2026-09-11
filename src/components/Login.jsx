@@ -29,7 +29,7 @@ function Login({ setIsLoggedIn, setUsername }) {
 
         try {
 
-            const response = await api.post(
+            const response = await axios.post(
                 "https://eventbookingbackend-dhdr.onrender.com/api/auth/login",
                 {
                     email: email,
