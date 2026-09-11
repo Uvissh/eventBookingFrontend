@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Profile.css";
+import api from "../api/axios";
 
 
 function Profile() {
@@ -25,13 +26,9 @@ function Profile() {
             }
 
 
-            const response = await axios.get(
-                "http://localhost:3000/api/profile",
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                }
+            const response = await api.get(
+                "/api/profile",
+              
             );
 
 
