@@ -19,7 +19,8 @@ function Register() {
         try {
 
             const response = await axios.post(
-                "http://localhost:3000/api/auth/register",
+                               "https://eventbookingbackend-dhdr.onrender.com//api/auth/register",
+
                 {
                     email: email,
                     password_hash: password_hash,

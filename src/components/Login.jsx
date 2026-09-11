@@ -29,8 +29,8 @@ function Login({ setIsLoggedIn, setUsername }) {
 
         try {
 
-            const response = await axios.post(
-                "http://localhost:3000/api/auth/login",
+            const response = await api.post(
+                "https://eventbookingbackend-dhdr.onrender.com/api/auth/login",
                 {
                     email: email,
                     password_hash: password_hash

@@ -35,11 +35,8 @@ api.interceptors.response.use(
                 // HttpOnly refreshToken cookie
                
                 //ask backend to give the newAccessToken
-                const response = await api.post("/auth/refresh",{
+                const response = await api.post("/auth/refresh");
                     
-                }
-            );
-
             const newAccessToken = response.data.token;
             localStorage.setItem("token",newAccessToken);
             //put new token into original request
