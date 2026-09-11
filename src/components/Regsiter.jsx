@@ -19,7 +19,7 @@ function Register() {
         try {
 
             const response = await axios.post(
-                               "https://eventbookingbackend-dhdr.onrender.com//api/auth/register",
+                               "https://eventbookingbackend-dhdr.onrender.com/api/auth/register",
 
                 {
                     email: email,
