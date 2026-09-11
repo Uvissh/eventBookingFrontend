@@ -27,7 +27,7 @@ function Profile() {
 
 
             const response = await api.get(
-                "/api/profile",
+                "/profile",
               
             );
 
